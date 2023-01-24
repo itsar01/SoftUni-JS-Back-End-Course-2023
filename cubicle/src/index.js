@@ -10,6 +10,7 @@ setupViewEngine(app);
 // require('./config/viewEngine.js')(app);
 
 app.use(express.static("src/public"));
+app.use(express.urlencoded({ extended: false }));
 app.use(routes);
 
 app.listen(config.PORT, () =>
