@@ -27,6 +27,13 @@
       "description": "Just a cute cube",
       "imageUrl": "https://i.pinimg.com/280x280_RS/53/56/93/535693979061ba30eaea9fb9ab02f5e5.jpg",
       "difficultyLevel": "1"
+    },
+    {
+      "name": "Phantom Rubik",
+      "description": "Impossible to beat rubik cube",
+      "imageUrl": "https://m.media-amazon.com/images/I/817p6yQUuDL.jpg",
+      "difficultyLevel": "6",
+      "id": 5
     }
   ]
 }
