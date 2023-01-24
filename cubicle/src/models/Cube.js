@@ -3,11 +3,11 @@ const db = require("../db.json");
 const path = require("path");
 
 class Cube {
-  constructor(name, description, imageUrl, dificultyLevel) {
+  constructor(name, description, imageUrl, difficultyLevel) {
     this.name = name;
     this.description = description;
     this.imageUrl = imageUrl;
-    this.dificultyLevel = dificultyLevel;
+    this.difficultyLevel = difficultyLevel;
   }
 
   static save(cube) {
