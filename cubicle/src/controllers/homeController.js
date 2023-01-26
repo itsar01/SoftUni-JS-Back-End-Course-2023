@@ -1,10 +1,13 @@
-const db = require("../db.json");
+// const db = require("../db.json");
 
-exports.getHomePage = (req, res) => {
+const Cube = require("../models/Cube.js");
+
+exports.getHomePage = async (req, res) => {
   const { search, from: difficultyFrom, to: difficultyTo } = req.query;
 
-  let cubes = db.cubes;
+  let cubes = await Cube.find().lean();
 
+  // TODO: Use db filtration instead of in memory filtering
   if (search) {
     cubes = cubes.filter((cube) =>
       cube.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
