@@ -1,6 +1,5 @@
 // const Cube = require("../models/Cube_old.js");
 const Cube = require("../models/Cube.js");
-const db = require("../db.json");
 
 exports.getCreateCube = (req, res) => {
   res.render("create");
