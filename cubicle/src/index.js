@@ -5,6 +5,8 @@ const config = require("./config/config");
 const setupViewEngine = require("./config/viewEngine.js");
 const initDatabase = require("./config/databaseInit.js");
 const cookieParser = require("cookie-parser");
+const auth = require("./middlewares/authMiddleware.js");
+//auth must be placed before the routes and after the cookie parses.
 
 const app = express();
 setupViewEngine(app);
@@ -14,6 +16,7 @@ setupViewEngine(app);
 app.use(express.static("src/public"));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
+app.use(auth.authentication);
 app.use(routes);
 
 initDatabase()
