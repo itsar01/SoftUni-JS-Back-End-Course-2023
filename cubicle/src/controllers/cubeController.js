@@ -65,7 +65,8 @@ exports.getEditCube = async (req, res) => {
   );
 
   if (!cubeUtils.isOwner(req.user, cube)) {
-    return res.redirecT("/404");
+    throw new Error("You are not an owner!");
+    // return res.redirecT("/404");
   }
   console.log(difficultyLevels);
   res.render("cube/edit", { cube, difficultyLevels });
