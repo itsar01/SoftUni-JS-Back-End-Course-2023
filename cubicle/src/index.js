@@ -2,7 +2,7 @@ const express = require("express");
 
 const routes = require("./routes.js");
 const config = require("./config/config");
-const errorHanlder = require("./middlewares/errorHandlerMiddleware.js");
+const errorHandler = require("./middlewares/errorHandlerMiddleware.js");
 const setupViewEngine = require("./config/viewEngine.js");
 const initDatabase = require("./config/databaseInit.js");
 const cookieParser = require("cookie-parser");
@@ -19,7 +19,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(auth.authentication);
 app.use(routes);
-app.use(errorHanlder);
+app.use(errorHandler);
 
 initDatabase()
   .then(() =>
